@@ -3,8 +3,8 @@ import { useDispatch } from "react-redux";
 import "./App.css";
 import authService from "./appwrite/auth";
 import { login, logout } from "./store/authSlice";
-import {Header} from './components/Header'
-import {Footer} from './components/Footer'
+import {Header} from './components/Header/Header'
+import {Footer} from './components/Footer/Footer'
 function App() {
   const [loading, setloading] = useState(true);
   const dispatch = useDispatch();

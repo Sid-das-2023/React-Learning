@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Footer = () => {
+function Logo({width = '100px'}) {
   return (
     <div>
-      
+      Logo
     </div>
   )
 }
 
-export default Footer
+export default Logo
