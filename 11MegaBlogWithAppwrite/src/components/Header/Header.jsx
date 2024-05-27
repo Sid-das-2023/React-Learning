@@ -1,11 +1,11 @@
 import React from 'react'
 import {Container, Logo, LogoutBtn} from '../index'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import {useSelector} from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
-
-const Header = () => {
-  const authStatus = useSelector((state) => {state.auth.status})
+function Header() {
+  const authStatus = useSelector((state) => state.auth.status)
   const navigate = useNavigate()
 
   const navItems = [
@@ -43,19 +43,20 @@ const Header = () => {
         <nav className='flex'>
           <div className='mr-4'>
             <Link to='/'>
-              <Logo width='70px'  />
-            </Link>
+              <Logo width='70px'   />
+
+              </Link>
           </div>
           <ul className='flex ml-auto'>
             {navItems.map((item) => 
-              item.active ? 
-              (<li key={item.name}>
+            item.active ? (
+              <li key={item.name}>
                 <button
                 onClick={() => navigate(item.slug)}
-                className='inline-block px-6 py-2 duration-200 hover:bg-blue-100 rounded-full'
+                className='inline-bock px-6 py-2 duration-200 hover:bg-blue-100 rounded-full'
                 >{item.name}</button>
               </li>
-              ) : null
+            ) : null
             )}
             {authStatus && (
               <li>
@@ -64,7 +65,7 @@ const Header = () => {
             )}
           </ul>
         </nav>
-      </Container>
+        </Container>
     </header>
   )
 }
